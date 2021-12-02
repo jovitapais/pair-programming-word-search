@@ -1,4 +1,13 @@
-const {transpose} = require("./transpose")
+//const {transpose} = require("./transpose")
+const transpose = function (array) {
+
+    return array[0].map(function (_, column) {
+       return array.map(function (row) {
+          return row[column]; 
+        });
+       });
+  };
+  
 
 const wordSearch = (letters, word) => { 
     const horizontalJoin = letters.map(ls => ls.join(''))
@@ -17,5 +26,9 @@ const wordSearch = (letters, word) => {
     // put transpose function below
    return false 
 }
+
+
+
+
 
 module.exports = wordSearch
